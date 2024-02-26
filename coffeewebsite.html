@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/35ffc435b8.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        html {
+            font-family: 'open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            width: 100%;
+            height: 70px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        header .logo a {
+            font-size: 30px;
+            color: white;
+            padding: 15px 30px;
+            text-transform: uppercase;
+        }
+
+        header .logo  span {
+            color:var(orange);
+        }
+
+        header nav ul {
+            display: flex;
+        }
+
+        header nav ul li a {
+            margin: 5px 20px;
+            font-size: 18px;
+            color: white;
+            padding: 10px 10px;
+        }
+
+        header nav ul li a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        /*content*/
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(to bottom right, rgba(96, 76, 76, .6), rgba(96, 76, 76, .6)), url("https://img.freepik.com/free-photo/cup-coffee-table-front-street-with-city-lights-background_188544-10293.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708473600&semt=ais");
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .content h2 {
+            font-size: 32px;
+            padding: 5px;
+            color: white;
+        }
+
+        .content p {
+            font-size: 22px;
+            color: white;
+
+        }
+
+        /*menu*/
+        .menu {
+            background-color: #333333;
+            width: 100%;
+        }
+
+        .menu .menu-header {
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-header h3 {
+            color: orange;
+            padding: 10px 30px;
+        }
+
+        .menu-header h4 {
+            color: orange;
+            padding: 10px 20px;
+        }
+
+        .menu .menu-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 50px 0;
+            flex-wrap: wrap;
+            background-color: #404040;
+        }
+
+        .menu .menu-content .hot-coffees,
+        .frappucino-coffees {
+            width: 250px;
+        }
+
+        .menu .menu-content .hot-coffees .hot-coffees-image img {
+            border-radius: 50%;
+        }
+
+        .menu .menu-content .frappucino-coffees .frappucino-coffees-image img {
+            border-radius: 50%;
+        }
+
+        .menu .menu-content .hot-coffees-body,
+        .frappucino-coffees-body {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .menu .menu-content .hot-coffees-body h2,
+        .cold-coffees-body h2 {
+            color: orange;
+        }
+
+        .menu .menu-content .hot-coffees-body label,
+        .cold-coffees-body label {
+            margin-top: 10px;
+            color: white;
+        }
+
+        /*shop*/
+        .shop {
+            background-color: #333333;
+            width: 100%;
+        }
+
+        .shop .shop-header {
+            display: flex 20px;
+            padding: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .shop-header h3 {
+            color: orange;
+            padding: 10px 30px;
+        }
+
+        .shop-header h4 {
+            color: orange;
+            padding: 10px 20px;
+        }
+
+        .shop-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: #404040;
+            padding: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .shop-box .card {
+            width: 280px;
+            margin: 20px;
+        }
+
+        .shop-box .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .shop-box .card-image img:hover {
+            transform: scale(1.1);
+            transition: transform .4s ease-in-out;
+        }
+
+        .shop-box .card-body {
+            padding: 20px;
+            color: white;
+            border: 3px solid #383838;
+        }
+
+        .shop-box .card-body h3 {
+            padding: 10px 0;
+        }
+
+        .shop-box .card-body i {
+            color: yellow;
+            font-size: 10px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .shop-box .card-body .cash {
+            font-size: 22px;
+            margin-left: 90px;
+        }
+        /*contact*/
+        .contact{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            border-top: 2px solid #333333;
+        }
+        .contact .contact-box .contact-image,
+        .contact .contact-box .contact-body{
+            height: 100%;
+        }
+        .contact img {
+            width:100%;
+            height: 100%;
+        }
+        .contact-image img {
+            opacity: .9;
+        }
+        .contact-body{
+            background-color: #404040;
+            height: 100%;
+            border-left: 2px solid #333333;
+        }
+        .contact-body form {
+            padding: 50px 40px;
+            box-sizing: border-box;
+        }
+        .contact-body h2 {
+            color: orange;
+        }
+        form .form-content {
+            position: relative;
+            margin: 30px 0;
+            border-bottom: 2px solid lightgray;
+        }
+        form .form-content input {
+            width: 100%;
+            height: 40px;
+            padding: 0 5px;
+            font-size: 17px;
+            border: none;
+            background: none;
+            outline: none;
+            color: white;
+        }
+        form .form-content label {
+            position: absolute;
+            top:50%;
+            left: 5px;
+            color: grey;
+            transform: translateY(-50%);
+            font-size: 17px;
+            transition: .5s;
+            pointer-events: none;
+        }
+        form .form-content span::before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: orange;
+            transform: .4s;
+        }
+        form .form-content input:focus~label,
+        form .form-content input:valid~label{
+            top: -5px;
+            color: orange;
+        }
+        form .form-content input:focus~span::before
+        form .form-content input:valid~span::before{
+            width: 100%;
+        }
+        .contact-body form button{
+            padding: 10px 20px;
+            font-size: 17px;
+            border: none;
+            background-color: #ff6600;
+            color: white;
+            border: 5px;
+            cursor: pointer;
+            transition: all .4s ease-in;
+        }
+        .contact-body form button:hover{
+            background-color: #ff6681;
+        }
+        /*footer*/
+        .footer {
+            background-color: #333333;
+        }
+        .footer .box-container{
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer .box-container.box {
+            padding: 100px 0;
+            flex: 1 1 50px;
+        }
+        .footer .box-container.box h3{
+            font-size: 20px;
+            padding: 20px 0;
+            color: #fff;
+        }
+        .footer .box-container.box p{
+            color: white;
+            font-size: 15px;
+            padding: .7px 0;
+        }
+        .footer .box-container.box a{
+            display: block;
+            font-size: 15px;
+            padding: .7px 0;
+            color: #eee;
+        }
+        .footer .box-container.box a:hover{
+            color: var(orange);
+            text-decoration: underline;
+            color: #eee;
+        }
+        .footer .credit{
+            text-align: center;
+            padding: 20px;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: normal;
+            color:#eee;
+            border-top:  2rem solid rgba(2,2,2,2);
+        }
+        .footer .credit span{
+            color: var(orange);
+        }
+        
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a herf="#" class="logo"><span>BlaBla</span>Coffee</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-User" id="login-btn"></i>
+        </div>
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here....">
+        </form>
+        <button>Login</button>
+    </header>
+    <div class="content">
+        <h2>BlaBlaCoffee</h2>
+        <p>Would you like to start the day with a nice coffee?</p>
+    </div>
+    <div class="menu" id="menu">
+        <div class="menu-header">
+            <h3>Menu</h3>
+            <h4>Blabla Coffee Menu</h4>
+        </div>
+        <div class="menu-content">
+            <div class="hot-coffees">
+                <img src="https://c1.wallpaperflare.com/preview/307/254/438/coffee-coffee-cup-hot-coffee-steam.jpg">
+                <div class="hot-coffees-body">
+                    <h2>hot-coffees</h2>
+                    <label>a person holding a cup of hot coffee was more likely to view others a warmer that she were
+                        holding a glass of iced</label>
+                </div>
+            </div>
+                    <div class="shop" id="shop">
+                        <div class="shop-header">
+                            <h3>Shop</h3>
+                            <h4>BlaBla Coffee Drinks</h4>
+                        </div>
+                    </div>
+                    <div class="shop-box">
+                        <div class="item-1">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img
+                                        src="https://www.allrecipes.com/thmb/LgtetzzQWH3GMxFISSii84XEAB8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/258686-IcedCaramelMacchiato-ddmps-4x3-104704-2effb74f7d504b8aa5fbd52204d0e2e5.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <label class="cash">4.45$</label>
+                                    <h3>Caramel Machiato</h3>
+                                    <label>Lorem ipsum dolor sit amet</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-2">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img
+                                        src="https://www.foodandwine.com/thmb/xQZv2CX6FO5331PYK7uGPF1we9Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Partners-Flat-White-FT-BLOG0523-b11f6273c2d84462954c2163d6a1076d.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <label class="cash">5.65$</label>
+                                    <h3>Flat White</h3>
+                                    <label>Lorem ipsum dolor sit amet</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-3">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img
+                                        src="https://thegirlinspired.com/wp-content/uploads/2022/07/double-chocolate-chip-frappuccino-recipe-card.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <label class="cash">7.65$</label>
+                                    <h3>Chocolate Frappucino</h3>
+                                    <label>Lorem ipsum dolor sit amet</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-4">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img
+                                        src="https://static.toiimg.com/thumb/57289996.cms?imgsize=299118&width=800&height=800">
+                                </div>
+                                <div class="card-body">
+                                    <label class="cash">2.65$</label>
+                                    <h3>Frappe</h3>
+                                    <label>Lorem ipsum dolor sit amet</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-5">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img
+                                        src="https://parade.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkwNTgwMTcyODUyNjM1NTE2/cafe-mocha.jpg">
+                                </div>
+                                <div class="card-body">
+                                    <label class="cash">5.65$</label>
+                                    <h3>CaffeMocha</h3>
+                                    <label>Lorem ipsum dolor sit amet</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-6">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img
+                                        src="https://globalassets.starbucks.com/digitalassets/products/bev/SBX20190528_CaffeVanillaFrapp.jpg?impolicy=1by1_wide_topcrop_630">
+                                </div>
+                                <div class="card-body">
+                                    <label class="cash">5.65$</label>
+                                    <h3>VanillaFrapucinno</h3>
+                                    <label>Lorem ipsum dolor sit amet</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="contact-box">
+                                <div class="contact-image">
+                                    <img
+                                        src="https://www.shutterstock.com/image-photo/contact-us-writing-emoji-lightbox-600nw-1025923420.jpg">
+                                </div>
+                            </div>
+                            <div class="contact-box">
+                                <div class="contact-body">
+                                    <form>
+                                        <h2>Contact Us</h2>
+                                        <div class="form-content">
+                                            <input type="text" required>
+                                            <span></span>
+                                            <label>Username</label>
+                                        </div>
+                                        <div class="form-content">
+                                            <input type="email" required>
+                                            <span></span>
+                                            <label>Email</label>
+                                        </div>
+                                        <button type="submit">Send</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="footer" id="footer">
+                        <div class="box-container">
+                            <div class="box">
+                                <h3>About Us</h3>
+                                <p>Café Coffee Day, a part of Coffee Day Global Limited, is India’s favourite hangout for coffee and conversations. Popularly known as CCD, we strive to provide the best experience to our guests. Our coffees are sourced from thousands of small coffee planters, who made us who we are today and we're glad to be a part of their lives. We opened our first cafe in 1996 at Brigade Road in Bangalore – the youth and the young at heart immediately took to the cafe, and it continues to be one of the most happening places in the city. CCD to the youth is a “hangout” spot where they meet people, make conversations, and have a whole lot of fun over steaming cups of great coffee.It's been an exciting journey since then to becoming the largest organised retail cafe chain in the country.</p>
+                                </div>
+                            
+                                </div>
+                                </div>
+                                <h1 class="credit">copyright <span> @2024</span>! all rights reserved</h1>
+                                </section>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
